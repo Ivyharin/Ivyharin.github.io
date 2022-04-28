@@ -1,0 +1,61 @@
+[meta title:"Ivysaur" description:"Short description of your project" /]
+
+[Header
+  fullWidth:true
+  title:"DOG VS CAT"
+  subtitle:"Doggie Vs Kitty popularity graph"
+  author:"Ivy"
+  background:"#ffb700"
+  color:"#000000"
+   /]
+
+###Choose your monster
+
+####DOG
+[var name:"myVar" value:false /]
+
+[Boolean value:myVar /]
+
+[Display value:`myVar ? "Woof!" : ""  `/]
+
+
+####CAT
+[var name:"yourVar" value:false /]
+
+[Boolean value:yourVar /]
+
+[Display value:`yourVar ? "Meow~" : ""  `/]
+
+[data name:"dino" source:"states.csv" /]
+
+[IdyllVegaLite data:dino spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "number_of_households_in_1000",
+      type: "quantitative",
+      axis: {title: "households"}
+    },
+    y: {
+      field: "percentage_of_dog_owners",
+      type: "quantitative",
+      axis: {title: "dog"}
+    }
+  }
+}` /]
+
+[IdyllVegaLite data:dino spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "number_of_households_in_1000",
+      type: "quantitative",
+      axis: {title: "households"}
+    },
+    y: {
+      field: "percentage_of_cat_owners",
+      type: "quantitative",
+      axis: {title: "cat"}
+    }
+  }
+}` /]
